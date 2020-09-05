@@ -50,6 +50,9 @@ INSTALLED_APPS = [
     'apps.users',
 ]
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
 AUTH_USER_MODEL = 'users.CustomUser'
 
 LOGIN_REDIRECT_URL = 'home'
