@@ -22,5 +22,6 @@ from recruit_project import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
+    path('users/', include('apps.users.urls')),
     path('', include('apps.core.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -11,7 +11,10 @@ class CustomUser(AbstractUser):
     address1 = models.CharField(max_length=100, default='some address')
     address2 = models.CharField(max_length=100, default='some address')
     city = models.CharField(max_length=50, default='Rio de Janeiro')
-    country = CountryField()
+    country = CountryField(default='Brazil')
 
     def __str__(self):
         return self.email
+
+    def get_full_name(self):
+        self.full_name = self.first_name + self.last_name

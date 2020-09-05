@@ -37,6 +37,21 @@
                       {% endif %}
 
                   </li>
+
+                  {% if user.is_authenticated %}
+                      <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              {{user.username}}
+                          </a>
+                          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                              <a class="dropdown-item" href="{% url 'users:users_edit' user.id %}">Profile</a>
+                              <a class="dropdown-item" href="#">Jobs I posted</a>
+                              <a class="dropdown-item" href="#">My Applications</a>
+                          </div>
+                      </li>
+                  {% endif %}
+
               </ul>
           </div>
       </nav>
