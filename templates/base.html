@@ -1,4 +1,5 @@
 <!doctype html>
+{% load static %}
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -17,8 +18,8 @@
 
   <div class="container">
 
-      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand" href="#">Navbar</a>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-3">
+          <a class="navbar-brand" href="{% url 'home' %}">Recruit</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                   aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -42,12 +43,16 @@
                       <li class="nav-item dropdown">
                           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              {{user.username}}
+                              {{user.first_name}}
                           </a>
                           <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                              <a class="dropdown-item" href="{% url 'users:users_edit' user.id %}">Profile</a>
-                              <a class="dropdown-item" href="#">Jobs I posted</a>
-                              <a class="dropdown-item" href="#">My Applications</a>
+                              {% if user.is_jobseeker %}
+                                  <a class="dropdown-item" href="{% url 'edit_jobseeker' user.id %}">Profile</a>
+                                  <a class="dropdown-item" href="#">My Applications</a>
+                              {% else %}
+                                  <a class="dropdown-item" href="{% url 'edit_employer' user.id %}">Profile</a>
+                                  <a class="dropdown-item" href="#">Jobs I posted</a>
+                              {% endif %}
                           </div>
                       </li>
                   {% endif %}
@@ -56,10 +61,13 @@
           </div>
       </nav>
 
-       {% include 'messages.html' %}
-       {% block content %}
-       {% endblock %}
-    </div>
+      <div class="container">
+          {% include 'messages.html' %}
+          {% block content %}
+          {% endblock %}
+      </div>
+
+  </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -24,4 +24,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('users/', include('apps.users.urls')),
     path('', include('apps.core.urls')),
+    # path('jobs/', include('apps.jobs.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

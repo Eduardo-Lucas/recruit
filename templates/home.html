@@ -2,16 +2,16 @@
 
 {% block content %}
     <div class="jumbotron">
-      {% if user.is_authenticated %}
-        Hello {{user.username}}!
-      {% else %}
-        Hello Guest!
-      {% endif %}
-      <h1 class="display-4">Welcome to I <i class="fas fa-heart text-danger"></i> Recruit!</h1>
-      <p class="lead">Where you can find the best jobs ever!</p>
-      <hr class="my-4">
-      <p>Find your dream job!</p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">I´m a Job Seeker</a>
-      <a class="btn btn-outline-primary btn-lg" href="#" role="button">I´m a Recruiter</a>
+        {% if user.is_authenticated %}
+          <p class="text-info">  Hello {{user.first_name}}!</p>
+        {% else %}
+          Hello Guest!
+        {% endif %}
+        <h1 class="display-4">Welcome to I <i class="fas fa-heart text-danger"></i> Recruit!</h1>
+        <p class="lead">Where you can find the best jobs ever!</p>
+        <hr class="my-4">
+        <p>Find your dream job!</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">I´m a Job Seeker</a>
+        <a class="btn btn-outline-primary btn-lg" href="#" role="button">I´m a Recruiter</a>
     </div>
 {% endblock %}
