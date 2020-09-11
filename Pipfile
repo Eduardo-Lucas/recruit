@@ -11,6 +11,7 @@ django-countries = "*"
 django-allauth = "~=0.42.0"
 djongo = "*"
 django-crispy-forms = "*"
+speechrecognition = "*"
 
 [requires]
 python_version = "3.8"
