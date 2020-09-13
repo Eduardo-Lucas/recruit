@@ -16,6 +16,8 @@ gunicorn = "*"
 whitenoise = "*"
 dj-database-url = "*"
 decouple = "*"
+django-decouple = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.8"
