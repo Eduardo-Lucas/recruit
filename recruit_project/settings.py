@@ -29,7 +29,7 @@ SECRET_KEY = 'ba(7a@$d2n@3i%%3%9hf4ke0!$332cq3=u!o2xonvaj%=c3*z&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['intel-recruit.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
