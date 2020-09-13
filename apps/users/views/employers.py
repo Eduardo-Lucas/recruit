@@ -29,7 +29,7 @@ class EmployerSignUpView(SuccessMessageMixin, CreateView):
 
 class EmployerUpdateView(LoginRequiredMixin, UpdateView):
     model = CustomUser
-    form_class = EmployerForm
+    fields = '__all__'
     template_name = 'users/employer_form.html'
     success_url = reverse_lazy('home')
 

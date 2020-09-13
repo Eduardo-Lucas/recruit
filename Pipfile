@@ -12,6 +12,10 @@ django-allauth = "~=0.42.0"
 djongo = "*"
 django-crispy-forms = "*"
 speechrecognition = "*"
+gunicorn = "*"
+whitenoise = "*"
+dj-database-url = "*"
+decouple = "*"
 
 [requires]
 python_version = "3.8"

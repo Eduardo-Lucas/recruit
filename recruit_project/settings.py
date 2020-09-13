@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+
+import dj_database_url
+import decouple
 from django.contrib import messages
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -96,13 +99,22 @@ WSGI_APPLICATION = 'recruit_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# Heroku
 DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': "recruitdatabase",
-    }
+    'default': dj_database_url.config(
+        'DATABASE_URL'
+    )
 }
 
+# Local Database = MongoDB
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': "recruitdatabase",
+#     }
+# }
+
+# Local Database = SQLite
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
